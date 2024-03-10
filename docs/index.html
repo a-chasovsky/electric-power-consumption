@@ -10,7 +10,7 @@ html {
 }
 
 /* 2. Make nav sticky */
-main > nav {
+main-container > nav {
   position: sticky;
   top: 2rem;
   align-self: start;
@@ -69,7 +69,7 @@ h1 {
 }
 
 /** page layout **/
-main {
+main-container {
     border-left: 1px solid red;
     border-right: 1px solid red;
   display: grid;
@@ -87,7 +87,7 @@ section {
 
 
 <body>    
-<main>
+<main-container>
   <div>
     <h1>Smooth Scrolling Sticky ScrollSpy Navigation</h1>
     <p><em>Want an explanation of how this works?<br />&rarr; <a href="https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/" target="_top">https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/</a></em></p>
@@ -173,7 +173,7 @@ section {
       <li class=""><a href="#filters">Filters</a></li>
     </ol>
   </nav>
-</main>
+</main-container>
     <script>
 window.addEventListener('DOMContentLoaded', () => {
 
