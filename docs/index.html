@@ -9,8 +9,9 @@
 html {
     scroll-behavior: smooth;
 }
-
-
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
 h1 { 
     font-family: system-ui;
     color: #303030;
@@ -96,6 +97,9 @@ content-container {
         padding-left: 30px;
         padding-right: 30px;
     }
+section {
+  scroll-margin-top: 15px;
+}
 .section-nav {
     width:100%;
     padding-left: 0;
@@ -118,36 +122,6 @@ content-container {
     color: #2E3339;
     font-weight:500
 }
-
-
-
-
-
-
-
-
-
-/** Poor man's reset **/
-/* * {
-    box-sizing: border-box;
-} */
-
-html, body {
-    background: #fff;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-li {
-    margin-left: 1rem;
-}
 img-center {
     display: flex;
     justify-content: center;
@@ -156,6 +130,14 @@ img-center {
 }
 img-margin {
     margin-left: 30px;
+}
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-left: 1rem;
 }
 space {
     display: block;
@@ -172,25 +154,6 @@ space25 {
     margin-top: 25px;
     content: ' '
 }
-/** page layout **/
-
-
-
-.toc_title {
-        font-weight: 600;
-        text-align: left;
-        font-family: system-ui;
-        color: #252525;
-        padding: 10px 0 10px 0;
-    }
-    text-number-toc {
-        font-family: system-ui;
-        font-weight:600;
-        color: #333333;
-        font-size: 0.85em;
-        text-align: justify;
-        line-height: 1.5;
-    }   
 a {
         scroll-margin-top: 15px;
     }
@@ -216,16 +179,13 @@ a {
         font-weight: 600;
         font-color: red;
     }
-section {
-  scroll-margin-top: 15px;
-}
 </style>  
 <body>   
 <header-container>
     <img src='img/header.png'
         style='width:760px'>
     <h1>
-       Прогноз потребления электроэнергии1
+       Прогноз потребления электроэнергии2
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -284,7 +244,7 @@ section {
       <li class=""><a href="#filters">Filters</a></li>
     </ol>
   </nav>
-    <content-container>
+    <content-container style='margin-left:0'>
         <section id="introduction">
         <p style='margin:0;'>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
