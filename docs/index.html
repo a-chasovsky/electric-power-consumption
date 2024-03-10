@@ -78,10 +78,10 @@ header-container {
 main-container {
     border-left: none;
     border-right: none;
-  display: grid;
-  grid-template-columns: 22.5% 77.5%;
+    display: grid;
+    grid-template-columns: 22.5% 77.5%;
     width: 100%;
-  margin: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 main-container > nav {
     position: sticky;
@@ -181,11 +181,35 @@ a {
     }
 </style>  
 <body>   
-<header-container>
-    <img src='img/header.png'
+<main-container>
+    <nav class="section-nav" style='margin-top:-2.755em'>
+    <ol>
+      <li><a href="#introduction">Описание проекта</a></li>
+      <li><a href="#request-response">Подзаголовок 1</a></li>
+      <li><a href="#authentication">Заголовок 2</a></li>
+      <li><a href="#endpoints">Подзаголовок 2</a>
+        <ul>
+          <li class=""><a href="#endpoints--root">Root</a></li>
+          <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
+          <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
+          <li class=""><a href="#endpoints--city-config">City Config</a></li>
+          <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
+          <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
+          <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
+          <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
+        </ul>
+      </li>
+      <li class=""><a href="#links">Links</a></li>
+      <li class=""><a href="#expanders">Expanders</a></li>
+      <li class=""><a href="#filters">Filters</a></li>
+    </ol>
+  </nav>
+<content-container>
+    <img 
+        src='img/header.png'
         style='width:760px'>
     <h1>
-       Прогноз потребления электроэнергии3
+       Прогноз потребления электроэнергии
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -211,41 +235,7 @@ a {
                 </span>
             </a>
         </span>
-    </header-container>
-<main-container>
-    <nav class="section-nav">
-        </nav>
-    <content-container style='border-right:none'>
-    <h2>
-        Описание проекта
-        </h2>
-        </content-container>
-    </main-container>
-<main-container>
-    <nav class="section-nav" style='margin-top:-2.755em'>
-    <ol>
-      <li><a href="#introduction">Описание проекта</a></li>
-      <li><a href="#request-response">Подзаголовок 1</a></li>
-      <li><a href="#authentication">Заголовок 2</a></li>
-      <li><a href="#endpoints">Подзаголовок 2</a>
-        <ul>
-          <li class=""><a href="#endpoints--root">Root</a></li>
-          <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
-          <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
-          <li class=""><a href="#endpoints--city-config">City Config</a></li>
-          <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
-          <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
-          <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
-          <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
-        </ul>
-      </li>
-      <li class=""><a href="#links">Links</a></li>
-      <li class=""><a href="#expanders">Expanders</a></li>
-      <li class=""><a href="#filters">Filters</a></li>
-    </ol>
-  </nav>
-    <content-container style='margin-left:0'>
-        <section id="introduction">
+    <section id="introduction">
         <p style='margin:0;'>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             <space></space>
@@ -313,9 +303,7 @@ a {
             Дополнительно учитываются коэффициенты за хороший старт и обгоны по ходу гонки. 
             </p>
             </section>
-        </content-container>
-
-
+    </content-container>
 <script>
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -338,12 +326,8 @@ window.addEventListener('DOMContentLoaded', () => {
   
 });
 </script>
-    
-</main-container>
+    </main-container>
 <script>
-
-
-
 let mybutton = document.getElementById('toTocBtn');
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -356,6 +340,5 @@ function scrollToID(id) {
       // behavior: 'smooth',
       inline: 'start'
     });
-
 </script>
 </body> 
