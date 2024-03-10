@@ -227,7 +227,7 @@ sb {
         style='width:760px;padding-left:30px'>
 <content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии2
+       Прогноз потребления электроэнергии3
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -261,9 +261,11 @@ sb {
             </h2>
         </section>
     <content-container style='border-left:none;padding-left:0;'>
-        <button onclick="scrollToID('links')" id="toTocBtn">
+        <div>
+        <button onclick="scrollToID('begin')" id="toTocBtn">
             В начало
             </button>
+            </div>
         <p style='margin:0;'>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             <space></space>
@@ -342,7 +344,7 @@ sb {
 
         
         </content-container>
-    </sub-container>
+
 <script>
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -378,5 +380,8 @@ function scrollToID(id) {
       inline: 'start'
     });
 </script>
+    
+    </sub-container>
+
     </main-container>
 </body> 
