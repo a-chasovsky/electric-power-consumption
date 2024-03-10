@@ -2,4 +2,4 @@
 
 https://www.kaggle.com/datasets/fedesoriano/electric-power-consumption/data
 
-<img src='img/header.png'>
+<img src='docs/img/header.png'>
