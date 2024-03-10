@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>HPP</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 </head>
 <style>
 /* 1. Enable smooth scrolling */
@@ -12,7 +10,7 @@ html {
 }
 
 /* 2. Make nav sticky */
-main-container > nav {
+main > nav {
   position: sticky;
   top: 2rem;
   align-self: start;
@@ -26,10 +24,8 @@ main-container > nav {
 
 /* Sidebar Navigation */
 .section-nav {
-    width:200px;
-    height:100%;
   padding-left: 0;
-  border-right: 1px solid #CFD7DE;
+  border-left: 1px solid #CFD7DE;
 }
 
 .section-nav a {
@@ -73,25 +69,16 @@ h1 {
 }
 
 /** page layout **/
-main-container {
-    /* border-left: 1px solid red;
-    border-right: 1px solid red; */
-  display: grid;
-  grid-template-columns: 1fr 670px;
-    width: 900px;
-  margin: 0 0 0 10%;
-}
-header-container {
-    display: block;
-    width: 750px;
-    /* border-right: none;
-    border-left: none; */
+main {
     border-left: 1px solid red;
     border-right: 1px solid red;
-    margin: 0 0 0 10%;
-    padding: 0 0 0 230px;
-    }
-    
+  display: grid;
+  grid-template-columns: 1fr 15em;
+  max-width: 100em;
+    width: 90%;
+  margin: 0 auto;
+}
+
 /** enlarge the sections for this demo, so that we have a long scrollable page **/
 section {
   padding-bottom: 20rem;
@@ -99,51 +86,18 @@ section {
 </style>
 
 
-<body>  
-<header-container>
-    <img src='img/header.png'
-        style='width:760px'>
-    <h1>
-       П 
-        </h1>
-    </header-container>
-<main-container>
-    <nav class="section-nav">
-    <ol>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#request-response">Request &amp; Response</a></li>
-      <li><a href="#authentication">Authentication</a></li>
-      <li><a href="#endpoints">Endpoints</a>
-        <ul>
-          <li class=""><a href="#endpoints--root">Root</a></li>
-          <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
-          <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
-          <li class=""><a href="#endpoints--city-config">City Config</a></li>
-          <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
-          <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
-          <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
-          <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
-        </ul>
-      </li>
-      <li class=""><a href="#links">Links</a></li>
-      <li class=""><a href="#expanders">Expanders</a></li>
-      <li class=""><a href="#filters">Filters</a></li>
-    </ol>
-  </nav>
+<body>    
+<main>
   <div>
     <h1>Smooth Scrolling Sticky ScrollSpy Navigation</h1>
     <p><em>Want an explanation of how this works?<br />&rarr; <a href="https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/" target="_top">https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/</a></em></p>
     <section id="introduction">
       <h2>Introduction</h2>
-      <p>
-         В первой части осуществляется выбор алгоритма, который будет прогнозировать <sb>остатки</sb> (ошибки) линейной регрессии. Здесь оцениваются разные типы ML-алгоритмов: метод ближайших соседей, бэггинг, случайный лес, бустинг, стэкинг. Самый эффективный алгоритм будет использоваться на втором уровне итогового оценщика HPP. Его прогнозы используются для коррекции прогнозов регрессии, что теоретически должно привести к увеличению точности предсказания цены. Для выбора лучшего алгоритма используется 20-фолдовая перекрестная проверка.
-        <space></space>
-        Во второй части секции по аналогичной схеме с 20-фолдовой кросс-валидацией определяется лучшая модель машинного обучения, прогнозирующая <sb>цену</sb> дома. Эта модель - очередной бенчмарк эффективности (в дополнение к моделям из предыдущих секций) для итогового оценщика HPP. 
-          </p>
+      <p>…</p>
     </section>
     <section id="request-response">
       <h2>Request &amp; Response</h2>
-      <p>...</p>
+      <p>…</p>
     </section>
     <section id="authentication">
       <h2>Authentication</h2>
@@ -197,8 +151,29 @@ section {
       <p>…</p>
     </section>
   </div>
-  
-</main-container>
+  <nav class="section-nav">
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#request-response">Request &amp; Response</a></li>
+      <li><a href="#authentication">Authentication</a></li>
+      <li><a href="#endpoints">Endpoints</a>
+        <ul>
+          <li class=""><a href="#endpoints--root">Root</a></li>
+          <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
+          <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
+          <li class=""><a href="#endpoints--city-config">City Config</a></li>
+          <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
+          <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
+          <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
+          <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
+        </ul>
+      </li>
+      <li class=""><a href="#links">Links</a></li>
+      <li class=""><a href="#expanders">Expanders</a></li>
+      <li class=""><a href="#filters">Filters</a></li>
+    </ol>
+  </nav>
+</main>
     <script>
 window.addEventListener('DOMContentLoaded', () => {
 
