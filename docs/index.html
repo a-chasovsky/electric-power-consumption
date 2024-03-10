@@ -255,7 +255,7 @@ section {
     <img src='img/header.png'
         style='width:760px'>
     <h1>
-       Потребление электроэнергии6
+       Потребление электроэнергии7
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -389,7 +389,7 @@ window.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
       // if (entry.intersectionRatio > 0) {
-      if (entry.intersectionRatio > 0.15) {
+      if (entry.intersectionRatio > 0.05) {
         document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
       } else {
         document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
