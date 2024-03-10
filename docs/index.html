@@ -223,6 +223,27 @@ a {
 section {
   padding-bottom: 20rem;
 }
+#toTocBtn {
+      display: none;
+      position: fixed;
+      margin-left: 880px;
+      bottom: 35px;
+      z-index: 99;
+      border: none; 
+      outline: none; 
+      background-color: #F1F1F1;
+      color: #1B60AA; 
+      cursor: pointer; 
+      padding: 15px; 
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    #toTocBtn:hover {
+      background-color: #E1E1E1;
+      border: none; 
+      color: #1B60AA;
+    }
+    
 </style>
 
 
@@ -233,7 +254,7 @@ section {
 <header-container>
     <img src='img/header.png'
         style='width:760px'>
-    <h1>
+    <h1 id='introduction'>
        Потребление электроэнергии
         </h1>
     <h5>
@@ -288,7 +309,7 @@ section {
   </nav>
   <div>
     <content-container>
-        <h2 id='introduction''>
+        <h2>
             Описание проекта
             </h2>
         <p>
@@ -346,7 +367,7 @@ section {
   </div>
   
 </main-container>
-    <script>
+<script>
 window.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(entries => {
@@ -366,5 +387,19 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   
 });
+
+let mybutton = document.getElementById('toTocBtn');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollToID(id) {
+    let element = document.getElementById(id);
+    element.scrollIntoView({
+      block: 'start',
+      // behavior: 'smooth',
+      inline: 'start'
+    });
+
 </script>
 </body> 
