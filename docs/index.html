@@ -6,68 +6,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 </head>
 <style>
-/* 1. Enable smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* 2. Make nav sticky */
-main-container > nav {
-    position: sticky;
-    top: 2rem;
-    align-self: start;
-}
-
-/* 3. ScrollSpy active styles (see JS tab for activation) */
-.section-nav li.active > a {
-    color: #2E3339;
-    font-weight:500
-}
-
-/* Sidebar Navigation */
-.section-nav {
-    width:100%;
-    padding-left: 0;
-}
-
-
-.section-nav a:link,
-.section-nav a:visited
-    {
-    text-decoration: none;
-    display: block;
-    padding: 0.25rem 0;
-    color: #707070;
-    transition: all 25ms ease-in-out; /* This small transition makes setting of the active state smooth */
-}
-
-.section-nav a:hover,
-.section-nav a:focus {
-    color: #444B53;
-    font-weight:500
-}
-
-/** Poor man's reset **/
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    background: #fff;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-li {
-    margin-left: 1rem;
-}
 
 h1 { 
     font-family: system-ui;
@@ -126,6 +68,86 @@ p {
     margin: 12.5px 0 0 0;
     text-align: justify
 }
+header-container {
+    display: block;
+    width: 750px;
+    margin: 0 0 0 22.5%;
+    padding: 0 0 0 30px;
+    }
+main-container {
+    border-left: none;
+    border-right: none;
+  display: grid;
+  grid-template-columns: 22.5% 77.5%;
+    width: 100%;
+  margin: 0 0 0 0;
+}
+main-container > nav {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+content-container {
+        display: block;
+        width: 870px;
+        border-right: 1px solid #CFD7DE;
+        border-left: 1px solid #CFD7DE;
+        margin: 0 0 0 0px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+.section-nav {
+    width:100%;
+    padding-left: 0;
+}
+.section-nav a:link,
+.section-nav a:visited
+    {
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    color: #707070;
+    transition: all 25ms ease-in-out;
+}
+.section-nav a:hover,
+.section-nav a:focus {
+    color: #444B53;
+    font-weight:500
+}
+.section-nav li.active > a {
+    color: #2E3339;
+    font-weight:500
+}
+
+
+
+
+
+
+
+
+
+/** Poor man's reset **/
+/* * {
+    box-sizing: border-box;
+} */
+
+html, body {
+    background: #fff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-left: 1rem;
+}
 img-center {
     display: flex;
     justify-content: center;
@@ -151,29 +173,9 @@ space25 {
     content: ' '
 }
 /** page layout **/
-main-container {
-    border-left: none;
-    border-right: none;
-  display: grid;
-  grid-template-columns: 22.5% 77.5%;
-    width: 100%;
-  margin: 0 0 0 0;
-}
-header-container {
-    display: block;
-    width: 750px;
-    margin: 0 0 0 22.5%;
-    padding: 0 0 0 30px;
-    }
-content-container {
-        display: block;
-        width: 870px;
-        border-right: 1px solid #CFD7DE;
-        border-left: 1px solid #CFD7DE;
-        margin: 0 0 0 0px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+
+
+
 .toc_title {
         font-weight: 600;
         text-align: left;
@@ -189,18 +191,6 @@ content-container {
         text-align: justify;
         line-height: 1.5;
     }   
-#toc_container {
-        background: #FFFDFF;
-        width: 720px;
-        border: 1px solid #CFD7DE;
-        display: table;
-        font-size: 95%;
-        margin-bottom: 1em;
-        padding: 5px 20px 20px 20px;
-        margin-top: 0px;
-        border-radius: 5px; 
-    }
-
 a {
         scroll-margin-top: 15px;
     }
@@ -229,33 +219,13 @@ a {
 section {
   scroll-margin-top: 15px;
 }
-#toTocBtn {
-      display: none;
-      position: fixed;
-      margin-left: 880px;
-      bottom: 35px;
-      z-index: 99;
-      border: none; 
-      outline: none; 
-      background-color: #F1F1F1;
-      color: #1B60AA; 
-      cursor: pointer; 
-      padding: 15px; 
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    #toTocBtn:hover {
-      background-color: #E1E1E1;
-      border: none; 
-      color: #1B60AA;
-    } 
 </style>  
 <body>   
 <header-container>
     <img src='img/header.png'
         style='width:760px'>
     <h1>
-       Прогноз потребления электроэнергии
+       Прогноз потребления электроэнергии1
         </h1>
     <h5>
        Машинное обучение, классификация
