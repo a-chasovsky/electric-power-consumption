@@ -227,12 +227,12 @@ sb {
         style='width:760px;padding-left:30px'>
 <content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии5
+       Прогноз потребления электроэнергии6
         </h1>
     <h5>
        Машинное обучение, классификация
         </h5>
-    <span style='margin-top:15px;margin-bottom:10px;padding-left:17px;display:inline-block;scroll-margin-top:15px;' id='links'>
+    <span style='margin-top:15px;margin-bottom:5px;padding-left:17px;display:inline-block;scroll-margin-top:15px;' id='links'>
         <a href='https://github.com/a-chasovsky/perc_credit_card_fraud_detection' target='_blank'>
             <span>
                 <img src='img/logo-power.png' style='width:20px;vertical-align:top'>
@@ -243,7 +243,7 @@ sb {
             </a>
             &emsp;
         </span>
-    <span style='margin-top:15px;margin-bottom:10px;display:inline-block;scroll-margin-top:15px;'>
+    <span style='margin-top:15px;margin-bottom:5px;display:inline-block;scroll-margin-top:15px;'>
         <a href='https://github.com/a-chasovsky' target='_blank'>
             <span>
                 <img src='img/logo-github.png' style='width:20px;vertical-align:top'>
@@ -261,6 +261,28 @@ sb {
             </h2>
         </section>
     <content-container style='border-left:none;padding-left:0;'>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+            
+              const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                  const id = entry.target.getAttribute('id');
+                  // if (entry.intersectionRatio > 0) {
+                  if (entry.intersectionRatio > 0) {
+                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+                  } else {
+                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+                  }
+                });
+              });
+            
+              // Track all sections that have an `id` applied
+              document.querySelectorAll('section[id]').forEach((section) => {
+                observer.observe(section);
+              });
+              
+            });
+            </script>
         <div>
         <button onclick="scrollToID('begin')" id="toTocBtn">
             В начало
@@ -283,30 +305,7 @@ sb {
             </p>
         <section id="request-response">
 
-        <script>
-        window.addEventListener('DOMContentLoaded', () => {
         
-          const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-              const id = entry.target.getAttribute('id');
-              // if (entry.intersectionRatio > 0) {
-              if (entry.intersectionRatio > 0) {
-                document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-              } else {
-                document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-              }
-            });
-          });
-        
-          // Track all sections that have an `id` applied
-          document.querySelectorAll('section[id]').forEach((section) => {
-            observer.observe(section);
-          });
-          
-        });
-        
-        
-        </script>
             
         <h3>
             Подзаголовок 1
