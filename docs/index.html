@@ -152,36 +152,55 @@ space25 {
     content: ' '
 }
 a {
-        scroll-margin-top: 15px;
-    }
-    a:link {
-        font-family: system-ui;
-        text-decoration: none;
-        color: #164B84;
-    }
-    a:visited {
-        font-family: system-ui;
-        color: #164B84;
-    }
-    a:hover {
-        font-family: system-ui;
-        color: #2373C7;
-        text-decoration: none;
-    }
-    a:active {
-        font-family: system-ui;
-        color: #2D8CF1;
-    }
-    sb {
-        font-weight: 600;
-        font-color: red;
-    }
+    scroll-margin-top: 15px;
+}
+a:link {
+    font-family: system-ui;
+    text-decoration: none;
+    color: #164B84;
+}
+a:visited {
+    font-family: system-ui;
+    color: #164B84;
+}
+a:hover {
+    font-family: system-ui;
+    color: #2373C7;
+    text-decoration: none;
+}
+a:active {
+    font-family: system-ui;
+    color: #2D8CF1;
+}
+sb {
+    font-weight: 600;
+    font-color: red;
+}
+#toTocBtn {
+    display: none;
+    position: fixed;
+    margin-left: 880px;
+    bottom: 35px;
+    z-index: 99;
+    border: none; 
+    outline: none; 
+    background-color: #F1F1F1;
+    color: #1B60AA; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 5px;
+    font-size: 14px;
+}
+#toTocBtn:hover {
+    background-color: #E1E1E1;
+    border: none; 
+    color: #1B60AA;
+}
 </style>  
 <body>   
 <main-container>
     <nav class="section-nav" style='margin-top:-2.755em'>
     <ol>
-        <li><a href="#begin">В начало</a></li>
       <li><a href="#introduction">Описание проекта</a></li>
       <li><a href="#request-response">Подзаголовок 1</a></li>
       <li><a href="#authentication">Заголовок 2</a></li>
@@ -208,7 +227,7 @@ a {
         style='width:760px;padding-left:30px'>
 <content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии4
+       Прогноз потребления электроэнергии5
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -242,6 +261,9 @@ a {
             </h2>
         </content-container>
     <content-container style='border-left:none;padding-left:0;'>
+        <button onclick="scrollToID('links')" id="toTocBtn">
+            В начало
+            </button>
         <p style='margin:0;'>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             <space></space>
