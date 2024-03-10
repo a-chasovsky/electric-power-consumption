@@ -227,7 +227,7 @@ sb {
         style='width:760px;padding-left:30px'>
 <content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии4
+       Прогноз потребления электроэнергии5
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -282,6 +282,32 @@ sb {
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             </p>
         <section id="request-response">
+
+        <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              // if (entry.intersectionRatio > 0) {
+              if (entry.intersectionRatio > 0) {
+                document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+              } else {
+                document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+              }
+            });
+          });
+        
+          // Track all sections that have an `id` applied
+          document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+          });
+          
+        });
+        
+        
+        </script>
+            
         <h3>
             Подзаголовок 1
             </h3>
@@ -349,29 +375,9 @@ sb {
     </sub-container>
 
     </main-container>
-<script>
-window.addEventListener('DOMContentLoaded', () => {
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      // if (entry.intersectionRatio > 0) {
-      if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-      } else {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-      }
-    });
-  });
-
-  // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-  });
-  
-});
-
-let mybutton = document.getElementById('toTocBtn');
+    <script>
+     let mybutton = document.getElementById('toTocBtn');
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -382,6 +388,6 @@ function scrollToID(id) {
       block: 'start',
       // behavior: 'smooth',
       inline: 'start'
-    });
-</script>
+    });   
+    </script>
 </body> 
