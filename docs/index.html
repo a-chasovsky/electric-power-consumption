@@ -95,7 +95,7 @@ content-container {
     padding: 0 30px 0 30px;
 }
 section {
-  scroll-margin-top: 15px;
+    scroll-margin-top: 15px;
 }
 .section-nav {
     width:100%;
@@ -179,7 +179,7 @@ sb {
 #toTocBtn {
     display: none;
     position: fixed;
-    margin-left: 880px;
+    margin-left: 0px;
     bottom: 35px;
     z-index: 99;
     border: none; 
@@ -227,7 +227,7 @@ sb {
         style='width:760px;padding-left:30px'>
 <content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии6
+       Прогноз потребления электроэнергии8
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -254,12 +254,12 @@ sb {
             </a>
         </span>
     </content-container>
-    <content-container style='border-right:none'>
+    <content-container style='border-right:none;'>
     <section id="introduction">
         <h2>
         Описание проекта
             </h2>
-        </content-container>
+        </section>
     <content-container style='border-left:none;padding-left:0;'>
         <button onclick="scrollToID('links')" id="toTocBtn">
             В начало
@@ -279,7 +279,7 @@ sb {
             <space></space>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             </p>
-            </section>
+            
         <section id="request-response">
         <h3>
             Подзаголовок 1
@@ -331,6 +331,7 @@ sb {
             Дополнительно учитываются коэффициенты за хороший старт и обгоны по ходу гонки. 
             </p>
             </section>
+        </content-container>
         </content-container>
     </sub-container>
 <script>
