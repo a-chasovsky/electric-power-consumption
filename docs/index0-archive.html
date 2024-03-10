@@ -25,20 +25,21 @@ main > nav {
 /* Sidebar Navigation */
 .section-nav {
   padding-left: 0;
-  border-left: 1px solid #efefef;
+  border-left: 1px solid #CFD7DE;
 }
 
 .section-nav a {
   text-decoration: none;
   display: block;
-  padding: .125rem 0;
-  color: #ccc;
-  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+  padding: 0.250rem 0;
+  color: #6A757F;
+  transition: all 25ms ease-in-out; /* This small transition makes setting of the active state smooth */
 }
 
 .section-nav a:hover,
 .section-nav a:focus {
-  color: #666;
+    color: #444B53;
+    font-weight:bold
 }
 
 /** Poor man's reset **/
@@ -69,10 +70,12 @@ h1 {
 
 /** page layout **/
 main {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
   display: grid;
   grid-template-columns: 1fr 15em;
   max-width: 100em;
-  width: 90%;
+    width: 90%;
   margin: 0 auto;
 }
 
