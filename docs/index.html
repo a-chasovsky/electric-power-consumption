@@ -81,22 +81,27 @@ main-container {
     display: grid;
     grid-template-columns: 22.5% 77.5%;
     width: 100%;
-    margin: 0 0 0 0;
+    margin: 0 0 75px 0;
 }
 main-container > nav {
     position: sticky;
     top: 2rem;
     align-self: start;
 }
+sub-container {
+    display: block;
+    width: 810px;
+    /* border-right: 1px solid #CFD7DE; */
+    /* border-right: 1px solid red;
+    border-left: 1px solid red; */
+}
 content-container {
-        display: block;
-        width: 810px;
-        border-right: 1px solid #CFD7DE;
-        border-left: 1px solid #CFD7DE;
-        margin: 0 0 0 0px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+    display: block;
+    width: 810px;
+    border-right: 1px solid #CFD7DE;
+    border-left: 1px solid #CFD7DE;
+    padding: 0 30px 0 30px;
+}
 section {
   scroll-margin-top: 15px;
 }
@@ -204,13 +209,13 @@ a {
       <li class=""><a href="#filters">Filters</a></li>
     </ol>
   </nav>
-
+<sub-container>
     <img 
         src='img/header.png'
-        style='width:760px'>
-<content-container>
+        style='width:760px;padding-left:30px'>
+<content-container style='border:none'>
     <h1>
-       Прогноз потребления электроэнергии3
+       Прогноз потребления электроэнергии4
         </h1>
     <h5>
        Машинное обучение, классификация
@@ -236,10 +241,14 @@ a {
                 </span>
             </a>
         </span>
+    </content-container>
+    <content-container style='border-right:none'>
     <section id="introduction">
         <h2>
         Описание проекта
             </h2>
+        </content-container>
+    <content-container style='border-left:none;padding-left:0;'>
         <p style='margin:0;'>
             Данных не так много. Теоретически, наиболее интересной характеристикой здесь является <sb>время прохождения круга</sb>. Поэтому основная задача - это найти способ преобразовать время прохождения круга в некий ключевой показатель эффективности, и дополнить его вспомогательными коэффициентами.  
             <space></space>
@@ -307,7 +316,8 @@ a {
             Дополнительно учитываются коэффициенты за хороший старт и обгоны по ходу гонки. 
             </p>
             </section>
-    </content-container>
+        </content-container>
+    </sub-container>
 <script>
 window.addEventListener('DOMContentLoaded', () => {
 
