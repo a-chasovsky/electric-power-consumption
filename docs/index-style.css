@@ -210,6 +210,26 @@ sb {
     border: none; 
     color: #1B60AA;
 }
+.toTocBtn {
+    display: none;
+    position: fixed;
+    margin-left: 845px;
+    bottom: 2em;
+    z-index: 99;
+    border: none; 
+    outline: none; 
+    background-color: #F1F1F1;
+    color: #1B60AA; 
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 0.5em;
+    font-size: 0.9em;
+}
+.toTocBtn:hover {
+    background-color: #E1E1E1;
+    border: none; 
+    color: #1B60AA;
+}
 .change-size {
     transform: scale(1.35);
     border: 1px solid #CCCCCC;
