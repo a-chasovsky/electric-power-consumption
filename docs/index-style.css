@@ -10,7 +10,7 @@ h1 {
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
-    margin-top: 0.9em;
+    margin-top: 0.8em;
     }
 h2 {
     color: #252525;
@@ -19,7 +19,7 @@ h2 {
     text-align: left;
     line-height: 1.5em;
     margin-bottom: -0.2em;
-    scroll-margin-top: 0.9em;
+    scroll-margin-top: 0.8em;
 }
 h3 {
     color: #252525;
@@ -28,7 +28,7 @@ h3 {
     text-align: left;
     line-height: 1.25em;
     margin-bottom: -0.2em;
-    scroll-margin-top: 0.9em;
+    scroll-margin-top: 0.8em;
 }
 h4 {
     color: #252525;
@@ -37,7 +37,7 @@ h4 {
     text-align: left;
     line-height: 1.25;
     margin-bottom: 0;
-    scroll-margin-top: 0.9em;
+    scroll-margin-top: 0.8em;
 }
 h5 {
     font-style: italic;
@@ -48,7 +48,7 @@ h5 {
     line-height: 1.25em;
     margin-top: -0.2em;
     margin-bottom: 0px;
-    scroll-margin-top: 0.9em;
+    scroll-margin-top: 0.8em;
 }
 p {
     font-size: 1em;
@@ -59,19 +59,16 @@ p {
 page-container {
     display: block;
     width: 100%;
-    border: 1px solid blue;
 }
 main-container {
     display: grid;
     grid-template-columns: 67% 33%;
     width: 88%;
     margin: 0 0 0 12%;
-    border: 1px solid black;
 }
 sub-container {
     display: block;
     width: 100%;
-    border: 1px solid purple;
 }
 content-container {
     display: block;
@@ -94,7 +91,7 @@ main-container > nav {
     height: 30em;
     font-size: 0.85em;
     color: #606060;
-    border: 1px solid red;
+    margin-left:-50em;
 }
 .toc a {
     text-decoration: none;
