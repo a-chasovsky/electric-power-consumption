@@ -10,7 +10,6 @@
     <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
-    <!-- <script src="index-script.js"></script> -->
 </head>
 <body>
 <div id="content">
@@ -32,7 +31,7 @@
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       Название проекта
+       1Название проекта
     </h1>
     <h5 style='text-align:right;margin-top:-0.5em;'>
        Краткое описание
@@ -171,12 +170,13 @@ let mybutton = document.getElementById('toTocBtn');
     // When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
   }
-    // Scroll to element (anchor 'href' analog)
+}
+// Scroll to element (anchor 'href' analog)
 function scrollToID(id) {
     let element = document.getElementById(id);
     element.scrollIntoView({
@@ -184,7 +184,7 @@ function scrollToID(id) {
       // behavior: 'smooth',
       inline: 'start'
     });
-}
+} 
 // Increase size of pictures
 function clickSize(img) {
       img.classList.toggle('change-size');
@@ -194,6 +194,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
+      // if (entry.intersectionRatio > 0) {
       if (entry.intersectionRatio > 0) {
         document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.add('active');
       } else {
