@@ -16,7 +16,7 @@ h2 {
     color: #252525;
     font-size: 1.3em;
     font-weight: 600;
-    text-align: left;
+    text-align: right;
     line-height: 1.5em;
     margin-bottom: -0.2em;
     scroll-margin-top: 0.8em;
@@ -91,6 +91,7 @@ main-container > nav {
     height: 30em;
     font-size: 0.85em;
     color: #606060;
+    border: 1px solid red;
 }
 .toc a {
     text-decoration: none;
