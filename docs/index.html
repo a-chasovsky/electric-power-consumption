@@ -30,8 +30,8 @@
 <sub-container>
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
-    <h1 id='title' style='text-align:right;margin-right:-60px;'>
-       3Название проекта
+    <h1 id='title' style='text-align:right;'>
+       4Название проекта
     </h1>
     <h5 style='text-align:right;margin-top:-0.5em;'>
        Краткое описание
@@ -65,14 +65,14 @@
         </span>
 </content-container>
 <content-container>
-    <h2 id='review1' style='text-align:right;'>
+    <h2 id='review1'>
         Пункт 1
         </h2>
 </content-container>
 <sub-container style='border-left: 1px solid #CFD7DE;'>
 <content-container>
 <button
-    id="toTocBtn" style='text-align:right;'
+    id="toTocBtn"
     onclick="scrollToID('general')">
     Наверх
     </button>
@@ -103,7 +103,7 @@
         <space></space>
         Целью проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмам машинного обучения. Модель состоит из двух уровней: на первом уровне линейная регрессия формирует первичные прогнозы и коэффициенты для интерпретации; второй уровень - это алгоритм машинного обучения, который прогнозирует величину остатков (ошибок) регрессии и корректирует результаты.
         <space></space>
-    <h2 id="review2" style='text-align:right;'>
+    <h2 id="review2">
             Пункт 2
             </h2>
     <space></space>
@@ -170,7 +170,7 @@ let mybutton = document.getElementById('toTocBtn');
     // When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
