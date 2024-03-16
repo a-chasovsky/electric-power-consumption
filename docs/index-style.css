@@ -193,26 +193,6 @@ sb {
 #toTocBtn {
     display: none;
     position: fixed;
-    margin-left: 1em;
-    bottom: 2em;
-    z-index: 99;
-    border: none; 
-    outline: none; 
-    background-color: #F1F1F1;
-    color: #1B60AA; 
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 0.5em;
-    font-size: 0.9em;
-}
-#toTocBtn:hover {
-    background-color: #E1E1E1;
-    border: none; 
-    color: #1B60AA;
-}
-.toTocBtn {
-    display: none;
-    position: fixed;
     margin-left: 845px;
     bottom: 2em;
     z-index: 99;
@@ -222,10 +202,10 @@ sb {
     color: #1B60AA; 
     cursor: pointer;
     padding: 15px;
-    border-radius: 0.5em;
+    border-radius: 5px;
     font-size: 0.9em;
 }
-.toTocBtn:hover {
+#toTocBtn:hover {
     background-color: #E1E1E1;
     border: none; 
     color: #1B60AA;
