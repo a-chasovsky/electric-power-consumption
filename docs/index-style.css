@@ -179,7 +179,7 @@ a:active {
 sb {
     font-weight: 600;
 }
-#toTocBtn {
+nav #toTocBtn {
     display: none;
     position: fixed;
     /* margin-left: 10%; */
