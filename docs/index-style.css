@@ -182,8 +182,6 @@ sb {
 #toTocBtn {
     display: none;
     position: fixed;
-    /* margin-left: 10%; */
-    /* bottom: 2em; */
     z-index: 99;
     border: none; 
     outline: none; 
