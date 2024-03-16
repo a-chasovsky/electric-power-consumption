@@ -148,22 +148,22 @@ section {
 }
 space {
     display: block;
-    margin-top: 1em;
+    margin-top: 0.8em;
     content: ' '
 }
 space2 {
     display: block;
-    margin-top: 1.5em;
+    margin-top: 1.2em;
     content: ' '
 }
 space3 {
     display: block;
-    margin-top: 2em;
+    margin-top: 1.6em;
     content: ' '
 }
 space4 {
     display: block;
-    margin-top: 2.5em;
+    margin-top: 2em;
     content: ' '
 }
 a {
