@@ -60,16 +60,19 @@ p {
 page-container {
     display: block;
     width: 100%;
+    border: 1px solid blue;
 }
 main-container {
     display: grid;
     grid-template-columns: 67% 33%;
     width: 88%;
     margin: 0 0 0 12%;
+    border: 1px solid black;
 }
 sub-container {
     display: block;
     width: 100%;
+    border: 1px solid purple;
 }
 content-container {
     display: block;
@@ -92,6 +95,7 @@ main-container > nav {
     height: 30em;
     font-size: 0.85em;
     color: #606060;
+    border: 1px solid red;
 }
 .toc a {
     text-decoration: none;
