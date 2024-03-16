@@ -1,22 +1,16 @@
 
 
-// When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
-
-
-
-
-window.addEventListener('scroll', e => {
-  mybutton.style.display = window.scrollY > 20 ? 'block' : 'none';
-});
+// Button 'Наверх'
+let mybutton = document.getElementById('toTocBtn');
+    // When the user scrolls down 300px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 // Scroll to element (anchor 'href' analog)
 function scrollToID(id) {
     let element = document.getElementById(id);
@@ -26,12 +20,10 @@ function scrollToID(id) {
       inline: 'start'
     });
 } 
-
 // Increase size of pictures
 function clickSize(img) {
       img.classList.toggle('change-size');
     }
-
 // Tracking sections with menu
 window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
