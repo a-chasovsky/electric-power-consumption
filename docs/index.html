@@ -7,6 +7,7 @@
     <title>Название проекта</title>
     <link rel="stylesheet" href="index-style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <script src="index-script.js"></script>
     <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
@@ -43,7 +44,7 @@
                 <!-- &#127969; -->
                 <img
                     src='img/logo-power.png'
-                    style='width:1.5em;vertical-align:-0.31em;'>
+                    style='width:1em;vertical-align:-0.31em;'>
                 </span>
             <span style='margin-left:0.4em;font-size:0.85em'>
                 Ссылка на репозиторий
@@ -103,48 +104,4 @@
     </div>
 
 </div>
-<script>
-// Button 'Наверх'
-let mybutton = document.getElementById('toTocBtn');
-    // When the user scrolls down 300px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-// Scroll to element (anchor 'href' analog)
-function scrollToID(id) {
-    let element = document.getElementById(id);
-    element.scrollIntoView({
-      block: 'start',
-      // behavior: 'smooth',
-      inline: 'start'
-    });
-} 
-// Increase size of pictures
-function clickSize(img) {
-      img.classList.toggle('change-size');
-    }
-// Tracking sections with menu
-window.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      // if (entry.intersectionRatio > 0) {
-      if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.add('active');
-      } else {
-        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.remove('active');
-      }
-    });
-  });
-    // Track all sections that have an `id` applied
-    document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-});
-});
-</script>
 </body>
