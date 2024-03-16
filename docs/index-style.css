@@ -80,7 +80,7 @@ main-container > nav {
 }
 .toc {
     width: 100%;
-    margin-top: 0.3em;
+    margin: 0.3em 0 0 0;
     height: 30em;
     font-size: 0.85em;
     color: #606060;
@@ -98,8 +98,6 @@ main-container > nav {
     display: block;
     list-style: none;
     padding: 0.5em 0 0 2em;
-    /* padding-top: 10.7em;
-    padding-left: 2em; */
 }
 .toc ul {
     list-style: none;
