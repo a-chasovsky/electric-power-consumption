@@ -81,8 +81,7 @@ main-container > nav {
 .toc {
     width: 100%;
     margin-top: 1em;
-    padding-top: 1.7em;
-    /* padding-right: 2em; */
+    padding-top: 10.7em;
     height: 30em;
     font-size: 0.85em;
     color: #606060;
