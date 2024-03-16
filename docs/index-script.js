@@ -2,15 +2,22 @@
 let mybutton = document.getElementById('toTocBtn');
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+// window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
+// function scrollFunction() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     mybutton.style.display = "block";
+//   } else {
+//     mybutton.style.display = "none";
+//   }
+// }
+
+
+
+
+window.addEventListener('scroll', e => {
+  mybutton.style.display = window.scrollY > 20 ? 'block' : 'none';
+});
 // Scroll to element (anchor 'href' analog)
 function scrollToID(id) {
     let element = document.getElementById(id);
