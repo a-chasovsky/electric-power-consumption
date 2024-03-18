@@ -16,7 +16,7 @@ h2 {
     font-size: 1.3em;
     font-weight: 600;
     line-height: 1.5em;
-    margin-bottom: -0.2em;
+    /* margin-bottom: -0.2em; */
     scroll-margin-top: 0.8em;
 }
 h3 {

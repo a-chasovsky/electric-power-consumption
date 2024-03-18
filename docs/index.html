@@ -147,7 +147,7 @@
         Часть 1</li>
     <li><a onclick="scrollToID('review2')" id='#review2'>Пункт 2</a></li>
     <li><a onclick="scrollToID('review3')" id='#review3'>Пункт 3</a></li>
-    <li><a onclick="scrollToID('review4')" id='#review4'>Пункт 4</a></li>
+    <li><a onclick="scrollToID('review4')" id='#review4'>Пункт 4 - пункт с большим количеством слов и переносом после этого <br>&nbsp; слова</a></li>
     </ol>
     <button
     id="toTocBtn"
@@ -170,7 +170,7 @@ let mybutton = document.getElementById('toTocBtn');
     // When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
