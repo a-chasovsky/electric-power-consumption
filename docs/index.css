@@ -188,6 +188,8 @@ sb {
     background-color: #F1F1F1;
     color: #1B60AA; 
     cursor: pointer;
+    padding: 1.5em;
+    border-radius: 0.7em;
 }
 #toTocBtn:hover {
     background-color: #E1E1E1;
