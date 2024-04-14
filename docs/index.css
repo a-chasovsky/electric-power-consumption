@@ -67,8 +67,8 @@ sub-container {
 }
 content-container {
     display: block;
-    width: 94%;
-    margin: 0 auto;
+    width: 92%;
+    /* margin: 0 auto; */
     text-align: justify;
 }
 main-container > nav {
