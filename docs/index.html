@@ -31,7 +31,7 @@
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       Прогноз потребления электроэнергии в Марокко
+       2Прогноз потребления электроэнергии в Марокко
     </h1>
     <h5 style='text-align:right;margin-top:-0.5em;'>
        Прогнозирование временных рядов
@@ -189,7 +189,16 @@
     <space></space>
     <h2 id='stationarity'>Стационарность и автокорреляция</h2>
     Временной ряд стационарен как для полных обучающих данных (Февраль-Июль), так и для ежемесячных данных на уровне значимости \( \alpha \) = 0.05.  
-
+    <space></space>
+    График автокорреляции дает первое представление о сезонности - пики для лагов 144, 72 (это эквивалентно суточной сезонности и 12-часовой сезонности).
+    <img
+        src='img/ACF_300.png'>
+<section id='stationarity'>
+    Несмотря на то, что данные стационарны, будет выбрана модель ARIMAX. График PACF для дифференциорованных данных показывает, что последний значимый коэффициент здесь равен 5.
+    <img
+        src='img/PACF_diff.png'>
+    <h2 id='ar_parameters'>Выбор параметров авторегрессии</h2>
+    
         
 
 
@@ -222,6 +231,10 @@
     <li><a onclick="scrollToID('research')" id='#research'>Исследование данных</a></li>
     <li><a onclick="scrollToID('anomaly')" id='#anomaly'>Аномалии в данных</a></li>
     <li><a onclick="scrollToID('stationarity')" id='#stationarity'>Стационарность и автокорреляция</li>
+    <li><a onclick="scrollToID('ar_parameters')" id='#ar_parameters'>Выбор параметров авторегрессии</li>
+
+
+    
     
     </ol>
     <button
