@@ -59,7 +59,7 @@ main-container {
     display: grid;
     grid-template-columns: 67% 33%;
     width: 88%;
-    margin: 0 0 0 20%;
+    margin: 0 0 0 30%;
 }
 sub-container {
     display: block;
