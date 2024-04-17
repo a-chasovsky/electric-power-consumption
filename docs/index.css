@@ -113,14 +113,8 @@ main-container > nav {
     padding-right: 1.5em;
     /* white-space: nowrap; */
 }
-/* .toc li.active {
+.toc li.active {
     list-style-type: disc;
-} */
-.toc li:before {
-    content:"·";
-    font-size:120px;
-    vertical-align:middle;
-    line-height:20px;
     color: #1E5FA5;
 }
 ul {
