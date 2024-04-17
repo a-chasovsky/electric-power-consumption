@@ -97,7 +97,7 @@ main-container > nav {
 .toc ol {
     display: block;
     list-style: none;
-    padding: 0.5em 0 0 2em;
+    padding: 1em 0 0 2em;
 }
 .toc ul {
     list-style: none;
@@ -111,8 +111,10 @@ main-container > nav {
     font-weight:600;
     color: #1E5FA5;
     padding-right: 1.5em;
-    list-style-type: disc;
     /* white-space: nowrap; */
+}
+.toc ol li.active > a {
+    list-style-type: disc;
 }
 ul {
     list-style-type: disc;
