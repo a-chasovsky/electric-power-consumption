@@ -114,7 +114,8 @@ main-container > nav {
     /* white-space: nowrap; */
 }
 .toc li.active {
-    list-style-type: disc;
+    /* list-style-type: disc; */
+    list-style-type: '|';
     color: #1E5FA5;
 }
 ul {
