@@ -115,10 +115,10 @@ main-container > nav {
 }
 .toc li.active {
     /* list-style-type: disc; */
+    /* color: #1E5FA5; */
     border-left: 0.25em solid #1E5FA5;
-    /* padding-left: 0.5em; */
-    margin-left: 0.5em;
-    color: #1E5FA5;
+    padding-left: 0.75em;
+    margin-right: 0.5em;
 }
 ul {
     list-style-type: disc;
