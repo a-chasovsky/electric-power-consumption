@@ -106,6 +106,7 @@ main-container > nav {
 }
 .toc li {
     text-align: left;
+    border-left: 0.1em solid #CFD7DE;
 }
 .toc li.active > a {
     font-weight:600;
