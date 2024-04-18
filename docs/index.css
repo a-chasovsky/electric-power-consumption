@@ -107,7 +107,7 @@ main-container > nav {
 .toc li {
     text-align: left;
     border-left: 1px solid #CFD7DE;
-    padding-left: 0.8em;
+    padding-left: 0.9em;
     margin-left: -0.8em;
 }
 .toc li.active > a {
