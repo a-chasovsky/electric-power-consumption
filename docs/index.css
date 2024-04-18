@@ -120,9 +120,9 @@ main-container > nav {
     /* list-style-type: disc; */
     /* color: #1E5FA5; */
     /* border-left: 0.2em solid #315E8E; */
-    border-left: 0.2em solid #315E8E;
+    border-left: 2px solid #315E8E;
     padding-left: 0.75em;
-    margin-left: -1em;
+    margin-left: -1.1em;
 }
 ul {
     list-style-type: disc;
