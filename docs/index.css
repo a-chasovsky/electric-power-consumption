@@ -80,7 +80,9 @@ main-container > nav {
 }
 toc-text-container {
     width:100;
-    border-left: 1px solid #CFD7DE;
+    height: 1.5em;
+    /* border-left: 1px solid #CFD7DE; */
+    border: 1px solid red;
     padding-left: 1em;
     margin-left: -0.8em;
 }
