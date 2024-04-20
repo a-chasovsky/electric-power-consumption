@@ -124,24 +124,6 @@ main-container > nav {
     padding-left: 0.9em;
     margin-left: -0.8em;
 }
-.toc lu {
-    text-align: left;
-    border-left: none;
-    padding-left: 1em;
-    margin-left: -0.8em;
-}
-.toc lu.active > a {
-    font-weight:600;
-    color: #1E5FA5;
-    padding-right: 0em;
-    /* white-space: nowrap; */
-}
-.toc lu.active {
-    font-weight:600;
-    list-style-type: disc;
-    color: #1E5FA5;
-    padding-right: 0em;
-}
 ul {
     list-style-type: disc;
     line-height: 1.5;
