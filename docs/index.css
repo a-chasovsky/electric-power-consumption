@@ -78,8 +78,8 @@ main-container > nav {
     overflow: scroll;
     scrollbar-width: none;
 }
-.toc toc-text-container {
-    width:100%;
+toc-text-container {
+    width: 100%;
     height: 5em;
     /* border-left: 1px solid #CFD7DE; */
     border: 1px solid red;
