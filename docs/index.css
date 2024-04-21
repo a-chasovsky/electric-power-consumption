@@ -84,7 +84,14 @@ main-container > nav {
     /* border-left: 1px solid #CFD7DE; */
     border: 1px solid red;
     padding-left: 1em;
-    margin-left: -0.8em;
+    margin-left: 0em;
+}
+.toc-text-container li {
+    text-align: left;
+    vertical-align: middle;
+    /* border-left: 1px solid #CFD7DE; */
+    /* padding-left: 1em;
+    margin-left: -0.8em; */
 }
 .toc {
     width: 100%;
