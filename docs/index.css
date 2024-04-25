@@ -117,7 +117,7 @@ main-container > nav {
     /* border-left: 2px solid #315E8E; */
     border-left: 2px solid red;
     padding-left: 0.9em;
-    margin-left: -0.8em;
+    margin-left: -1em;
     /* white-space: nowrap; */
 }
 /* .toc li.active { */
