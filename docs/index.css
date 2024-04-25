@@ -115,9 +115,9 @@ main-container > nav {
     color: #1E5FA5;
     padding-right: 0em;
     /* border-left: 2px solid #315E8E; */
-    border-left: 2px solid red;
+    border-left: 2px solid green;
     padding-left: 0.9em;
-    margin-left: -1em;
+    margin-left: -1.1em;
     /* white-space: nowrap; */
 }
 /* .toc li.active { */
