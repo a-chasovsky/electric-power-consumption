@@ -115,7 +115,7 @@ main-container > nav {
     color: #1E5FA5;
     padding-right: 0em;
     /* border-left: 2px solid #315E8E; */
-    border-left: 2px solid #1E5FA5;
+    border-left: 2px solid red;
     padding-left: 0.9em;
     margin-left: -0.8em;
     /* white-space: nowrap; */
