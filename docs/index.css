@@ -112,7 +112,7 @@ main-container > nav {
 }
 .toc li.active > a {
     font-weight:600;
-    color: #1B1D1F; /* 1E5FA5 */
+    color: #1E5FA5; /* 1B1D1F */
     padding-right: 0em;
     /* border-left: 2px solid #315E8E; */
     /* white-space: nowrap; */
