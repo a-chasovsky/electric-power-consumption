@@ -97,7 +97,7 @@ main-container > nav {
 .toc ol {
     display: block;
     list-style: none;
-    padding: 1em 0 0 2em;
+    padding: 0.9em 0 0 2em;
 }
 .toc ul {
     list-style: none;
