@@ -228,9 +228,6 @@ hr.grey {
     border-width: 0;
     margin: 1em auto 1em auto;
 }
-.supsub {position: absolute}
-.subscript {color: green; display:block; position:absolute; left:2px; top: -5px}
-.superscript {color: red; display:block; position:absolute; left:2px; top: -5px}
 
 /* if desktop */
 .mobile_device_380px {
