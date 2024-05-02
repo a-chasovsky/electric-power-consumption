@@ -228,6 +228,12 @@ hr.grey {
     border-width: 0;
     margin: 1em auto 1em auto;
 }
+.supsub {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: middle;
+}
 /* if desktop */
 .mobile_device_380px {
     display: none;
