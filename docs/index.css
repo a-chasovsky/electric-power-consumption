@@ -138,9 +138,6 @@ li {
     /* text-align: justify; */
     text-align: left;
 }
-/* ul li {
-    text-align: left;
-} */
 img-center {
     display: flex;
     justify-content: center;
