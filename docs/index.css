@@ -92,7 +92,8 @@ main-container > nav {
 }
 .toc a:hover,
 .toc a:focus {
-    color: #1E5FA5;
+    /* color: #1E5FA5; */
+    color: #39AF72;
 }
 .toc ol {
     display: block;
@@ -106,7 +107,8 @@ main-container > nav {
 }
 .toc li {
     text-align: left;
-    border-left: 1px solid #CFD7DE;
+    /* border-left: 1px solid #CFD7DE; */
+    border-left: 1px solid #39AF72;
     padding-left: 1em;
     margin-left: -0.8em;
     line-height: 1.8em;
