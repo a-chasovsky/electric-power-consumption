@@ -1992,8 +1992,19 @@ def ticklabels_f_remove(idx=-1, ax=None):
     ax.xaxis.get_major_ticks()[idx].label1.set_visible(False)
 
 
-def plot_hline(y=0, xmin=0.01, xmax=0.99, lw=0.75, ls='--', zorder=-9, color='#CCCCCC', ax=None, **kwargs):
+def plot_hline(
+        y=0,
+        xmin=0.01,
+        xmax=0.99,
+        lw=0.75,
+        ls='--',
+        zorder=-9,
+        color='#CCCCCC',
+        ax=None,
+        **kwargs):
+    
     if ax is None: ax = plt.gca()
+        
     ax.axhline(
         y, xmin=xmin, xmax=xmax, lw=lw, ls=ls,
         color=color, zorder=zorder, **kwargs)
