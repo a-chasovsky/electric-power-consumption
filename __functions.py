@@ -257,6 +257,10 @@ def alpha_palette(palette, alpha=0.75):
 
 
 def loadit(name, dir='files', create_empty_dict=False):
+    '''
+    'create_empty_dict' == True --> function will create empty dictionary,
+                                    if there is no such file in directory
+    '''
     try:
         result = pd.read_pickle(f'{dir}{name}.pkl')
         return result
@@ -1577,7 +1581,7 @@ def axis_rstyle(
         spines_color: str ='#CCCCCC',
         ticks_color: str ='#CECECE',
         ticklabels_color: str ='#808080',
-        grid: bool = True,
+        grid: bool = False,
         ax=None):
     
     '''
@@ -2163,6 +2167,72 @@ def plot_gridplot(
     plt.show()
     
     return fig
+
+
+def generate_feature_diff_sunday(data, feature):
+
+    df = data.copy()
+    df['month'] = df.index.month
+    months_unique = df['month'].unique()
+    first_month = months_unique[0]
+    len_first_month = len(df[df['month']==first_month])
+    new_values = np.empty(len_first_month)
+    new_values[:] = np.NaN
+    new_index = df[df['month']==first_month].index
+    df['diff_Sunday'] = np.NaN
+
+    for month in months_unique:
+        if month > first_month:
+            index_current = df.loc[df['month']==month].index
+            index_previous = df.loc[df['month']==month-1].index
+            df_current = df.loc[index_current, :].copy()
+            df_previous = df.loc[index_previous, :].copy()
+            
+            df_s_previous = df_previous.loc[df_previous['weekday'] == 6].copy()
+            values_s_previous = df_s_previous.groupby(['hour', 'minute']).mean()[feature]
+            
+            df_nos_previous = df_previous.loc[df_previous['weekday'] != 6].copy()
+            values_nos_previous = df_nos_previous.groupby(['hour', 'minute']).mean()[feature]
+
+            values_diff = values_nos_previous - values_s_previous
+
+            current_s_number = int(len(df_current[df_current['weekday']==6]) / 144)
+            values_diff_current = list(values_diff) * current_s_number
+
+            df.loc[((df.index.isin(index_current)) & (df['weekday'] == 6)), 'diff_Sunday'] = values_diff_current
+
+            df['diff_Sunday'] = df['diff_Sunday'].fillna(0)
+
+    return df
+
+
+def generate_feature_previous_month(data, feature):
+
+    df = data.copy()
+    df['month'] = df.index.month
+    months_unique = df['month'].unique()
+    first_month = months_unique[0]
+    len_first_month = len(df[df['month']==first_month])
+    new_values = np.empty(len_first_month)
+    new_values[:] = np.NaN
+
+    for month in months_unique:
+        if month > first_month:
+            index_current = df.loc[df['month']==month].index
+            index_previous = df.loc[df['month']==month-1].index
+            len_current = len(df.loc[index_current])
+            len_previous = len(df.loc[index_previous])
+            values_previous = df.loc[index_previous, feature].copy()
+            if len_previous > len_current:
+                values_current = values_previous.iloc[:len_current].values.copy()
+            else:
+                values_current = values_previous.values.copy()
+                len_diff = len_current - len_previous
+                values_diff = values_current[-len_diff:]
+                values_current = np.concatenate((values_current, values_diff), axis=0)
+            new_values = np.append(new_values, values_current)
+
+    return new_values
 
 
 
