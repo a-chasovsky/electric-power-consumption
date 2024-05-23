@@ -28,6 +28,11 @@ import os
 import locale
 import pickle
 import math
+import statsmodels
+import statsmodels.stats.api as sms
+
+from scipy import stats
+from sklearn.metrics import root_mean_squared_error
 
 
 # ----------------------------------------------------------------------------
@@ -1032,7 +1037,7 @@ def plot_acf(
         acf_w_alphas=None, data=None, lags=40, partial=False, scatter=False, s=2,
         transparency_lines=1, color_lines=None, exclude_first=True,
         transparency_significant=0.15, show_last_significant=True,
-        last_significant_delta=0.1, color_significant=None, **kwargs):
+        last_significant_delta=0.1, color_significant=None, color_annotate=None, **kwargs):
 
     if acf_w_alphas is None:
         acf_w_alphas = ts_acf_calculate(data, lags=lags, partial=partial, **kwargs) 
@@ -1046,6 +1051,8 @@ def plot_acf(
 
     color_significant = color_significant or color_palette[2]
     color_lines = color_lines or color_palette[0]
+
+    color_annotate = color_annotate or color_palette[1]
 
     if exclude_first:
         acf[0] = 0
@@ -1093,7 +1100,7 @@ def plot_acf(
             xy=(last_sign, last_sign_y),
             ha='center',
             size=9,
-            color=palette[1],
+            color=color_annotate,
             weight='bold')
 
     plt.plot([-1, lags], [0, 0])
@@ -2233,6 +2240,191 @@ def generate_feature_previous_month(data, feature):
             new_values = np.append(new_values, values_current)
 
     return new_values
+
+
+def cv_split_indexes(data, start, train_size, test_size, size_unit, n_splits, freq):
+
+    '''
+    Sliding window TS-split
+    '''
+    
+    df = data.copy()
+
+    train_window = {size_unit: train_size}
+    train_offset = pd.offsets.DateOffset(**train_window)
+
+    if isinstance(start, str):
+        start_date = pd.to_datetime(start) - train_offset
+    else:
+        start_date = start - train_offset
+
+    train_indexes_list = []
+    test_indexes_list = []
+
+    for n in arange(n_splits):
+        
+        train_window = {size_unit: train_size}
+        train_offset = pd.offsets.DateOffset(**train_window)
+        train_start = start_date
+        train_end = train_start + train_offset
+        train_indexes = pd.date_range(train_start, train_end, freq=freq)[:-1]
+        train_indexes_list.append(train_indexes)
+        
+        test_window = {size_unit: test_size}
+        test_offset = pd.offsets.DateOffset(**test_window)
+        test_start = start_date + train_offset
+        test_end = test_start + test_offset
+        test_indexes = pd.date_range(test_start, test_end, freq=freq)[:-1]
+        test_indexes_list.append(test_indexes)
+
+        start_date = start_date + test_offset
+
+    return train_indexes_list, test_indexes_list
+
+
+def cv_arima_evaluation_error(
+        data_train,
+        data_eval,
+        order,
+        exog_train=None,
+        exog_eval=None,
+        metric=root_mean_squared_error,
+        exec_time=True, clear_output_include=True):
+
+    '''
+    Metric: sklearn-like metric with (y_true, y_pred)
+    '''
+
+    time_start = time.time()
+
+    model = SARIMAX(
+        endog=data_train,
+        exog=exog_train,
+        order=order,
+        seasonal_order=(0, 0, 0, 0)
+    ).fit(maxiter=1000, disp=False)
+
+    if clear_output_include:
+        clear_output()
+
+    y_true = data_eval
+    y_pred = model.get_forecast(steps=len(y_true), exog=exog_eval).predicted_mean
+
+    result = metric(y_true, y_pred)
+    
+    time_finish = time.time() - time_start
+    time_finish = dt.timedelta(seconds=np.round(time_finish))
+
+    if exec_time:
+        print(f'Execution time: {time_finish}')
+
+    return result
+
+
+def datasets_w_fourier(
+        fourier_period: list,
+        fourier_order: list,
+        train_data,
+        eval_data,
+        train_exog=None,
+        eval_exog=None):
+
+    # create df with fourier exogs for train dataset
+    train_df = pd.DataFrame()
+    # create df with fourier exogs for test dataset
+    eval_df = pd.DataFrame()
+    
+    for p, o in zip(fourier_period, fourier_order):
+
+        train_fourier = statsmodels.tsa.deterministic.Fourier(p, o)
+        train_fourier_exogs = train_fourier.in_sample(train_data.index)
+        train_df = train_fourier_exogs.join(train_df)
+
+        eval_fourier = statsmodels.tsa.deterministic.Fourier(p, o)
+        eval_fourier_exogs = eval_fourier.in_sample(eval_data.index)
+        eval_df = eval_fourier_exogs.join(eval_df)
+
+    train_df = train_df.join(train_exog)
+    eval_df = eval_df.join(eval_exog)
+
+    return train_df, eval_df
+
+
+def get_peaks_indicies(data, boundary):
+    peaks, _ = scipy.signal.find_peaks(data, height=boundary)
+    return peaks
+
+
+def index_for_occurrence(text, token, occurrence):
+    gen = (i for i, l in enumerate(text) if l == token)
+    for _ in range(occurrence - 1):
+        next(gen)
+    return next(gen)
+
+
+def plot_forecast(
+        y_true,
+        y_pred,
+        forecast,
+        slice_series=[None, None],
+        ci=[80, 95],
+        palette=None,
+        alpha_actual=0.75,
+        alpha_forecast=0.75,
+        alphas=[0.25, 0.15],
+        legend=True,
+        display_intervals=True,
+        ax=None):
+
+    if ax is None: ax = plt.gca()
+
+    palette = palette or plt.rcParams['axes.prop_cycle'].by_key()['color']
+    ci_alphas = [(100 - i)*0.01 for i in ci]
+    slice_series_ = slice(slice_series[0], slice_series[1])
+
+    y_true = y_true[slice_series_]
+    y_pred = y_pred[slice_series_]
+    
+    ax.plot(y_true, color=palette[0], alpha=alpha_actual, label='Actual')
+    ax.plot(y_pred, color=palette[1], alpha=alpha_forecast, label='Forecast')
+
+    if display_intervals:
+
+        level0 = forecast.conf_int(alpha=ci_alphas[0])
+        level1 = forecast.conf_int(alpha=ci_alphas[1])
+    
+        label0 = f'Level {ci[0]}%'
+        label1 = f'Level {ci[1]}%'
+
+        level0 = level0[slice_series_]
+        level1 = level1[slice_series_]
+
+        ci_levels = [level0, level1]
+        ci_labels = [label0, label1]
+        ci_palette = [palette[2], palette[2]]
+
+        for le, la, c, a in zip(ci_levels, ci_labels, ci_palette, alphas):
+        
+            ax.fill_between(
+                x=y_pred.index,
+                y1=le.iloc[:, 0],
+                y2=le.iloc[:, 1],
+                lw=0,
+                color=c,
+                alpha=a,
+                label=la)
+
+    if legend:
+        ax.legend(
+            **legend_inline(),
+            **legend_create_handles(
+                4, kind=['l', 'l', 'r', 'r'],
+                labels=['Actual', 'Forecast', label0, label1],
+                colors=[palette[0], palette[1], palette[2], palette[2]],
+                alphas=[alpha_actual, alpha_forecast, alphas[0], alphas[1]]))
+
+
+
 
 
 
