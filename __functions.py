@@ -27,6 +27,7 @@ import datetime as dt
 import os
 import locale
 import pickle
+import math
 
 
 # ----------------------------------------------------------------------------
@@ -1576,7 +1577,7 @@ def axis_rstyle(
         spines_color: str ='#CCCCCC',
         ticks_color: str ='#CECECE',
         ticklabels_color: str ='#808080',
-        grid: bool = False,
+        grid: bool = True,
         ax=None):
     
     '''
@@ -2079,285 +2080,89 @@ def axis_add_date_xaxis(
 # 5. Special functions
 
 
-def transform_prices_9_6(data_raw, month, year, insert_column=False):
+def plot_gridplot(
+        data, features, target=None, figsize=None, ncols=3, kind='reg',
+        plot_shape='rectangle', markersize=15, hscale=1, pscale=1, regplot_kwargs={},
+        pointplot_kwargs={}, scatterplot_kwargs={}, histplot_kwargs={}):
+
+    nrows = math.ceil(len(features) / ncols)
+    nplots = np.arange(1, len(features)+1)
+
+    if plot_shape == 'square':
+        whscale=(2,2)
+    if plot_shape == 'rectangle':
+        whscale=(4,2.5)
+
+    if figsize is not None:
+        figsize = figsize
+    else:
+        width = whscale[0] * ncols
+        height = whscale[1] * nrows
+        figsize_width = width * pscale
+        figsize_height = height * pscale
+        figsize = (figsize_width, figsize_height)
     
-    df = data_raw.copy()
-    if insert_column:
-        df.insert(loc=0, column='delete', value=df.iloc[:, 0].copy())
-    # remove unnecessary columns and rows
-    df = df.loc[[2, 4], :].copy()
-    df = df.iloc[:, 1:].copy()
-    # remove spaces in products
-    df.loc[2] = df.loc[2].map(remove_duplicated_whitespaces)
-    # create index cell
-    df.iloc[0, 0] = 'idx'
-    # change 'Российская Федерация' to month and year
-    df.iloc[1, 0] = month + ' ' + year
-    # make row with loc 2 as columns
-    df.columns = df.loc[2]
-    df = df.drop(2)
-    df.columns.name = None
-    # make 'idx' column as index
-    df = df.set_index('idx', drop=True)
-    df.index.name = None
-
-    return df
-
-
-def saveit_excel(data, filename, path, sheet):
+    fig = plt.figure(figsize=figsize)
     
-    if not os.path.exists(path):
-        os.mkdir(path)
-    # create full path from directory (path argument) and filename
-    path_ = path + filename + '.xlsx'
-    # if such file exist - append  to it new sheet
-    if os.path.exists(path_):
-        with pd.ExcelWriter(
-            path_,
-            mode="a",
-            engine="openpyxl",
-            if_sheet_exists="replace",
-        ) as writer:
-            data.to_excel(
-                excel_writer=writer,
-                sheet_name=sheet
+    if kind == 'reg':
+        for feature, plot in zip(features, nplots):
+            plt.subplot(nrows, ncols, plot)
+            sns.regplot(
+                data=data,
+                x=feature,
+                y=target,
+                scatter_kws={
+                    'ec': '#606060',
+                    's': markersize,
+                    'alpha': 0.9
+                },
+                **regplot_kwargs
             )
-            print(f"'{sheet}' sheet created in file '{filename + '.xlsx'}'")
-    # if not exist - create new .xlsx
-    else:
-        data.to_excel(
-            excel_writer=path_,
-            sheet_name=sheet
-        )
-        print(f"File '{filename}' created")
+            plt.ylabel(None)
 
+    if kind == 'point':
+        for feature, plot in zip(features, nplots):
+            plt.subplot(nrows, ncols, plot)
+            sns.pointplot(
+                data=data,
+                x=feature,
+                y=target,
+                markersize=markersize,
+                linestyle='none',
+                capsize=0.031,
+                err_kws={'lw': 0.81*pscale},
+                **pointplot_kwargs
+            )
+            plt.ylabel(None)
+            plt.xticks(rotation=45)
 
-def transform_make_header_from_rows(data, rows_index, names=None):
-    
-    df = data.copy()
-    
-    if isinstance(rows_index, list):
-        # create list of tuples for multiindex columns
-        multi_index_columns = []
-    
-        for i in df.columns:
-            multi_index_tuple = ()
-            for index in rows_index:
-                multi_index_tuple = multi_index_tuple + (str(df.loc[index, i]),)
-            multi_index_columns.append(multi_index_tuple)
-    
-        df.columns=pd.MultiIndex.from_tuples(multi_index_columns, names=names)
+    if kind == 'hist':
+        for feature, plot in zip(features, nplots):
+            plt.subplot(nrows, ncols, plot)
+            sns.histplot(
+                data=data,
+                x=feature,
+                alpha=0.95,
+                **histplot_kwargs
+            )
+            plt.ylabel(None)
+
+    if kind == 'scatter':
+        for feature, plot in zip(features, nplots):
+            plt.subplot(nrows, ncols, plot)
+            sns.scatterplot(
+                data=data,
+                x=feature,
+                y=target,
+                s=markersize,
+                **scatter_kwargs
+            )
+            plt.ylabel(None)
         
-    else:
-        df.columns = df.loc[rows_index]
+    plt.subplots_adjust(hspace=0.4*hscale)
+    plt.show()
     
-    df = df.drop(rows_index, axis=0)
-    
-    return df
-
-
-def transform_concat_rows_strings(df, column_name='index'):
-    '''
-    In particular column function concat rows if there are two consecutive strings in rows
-    If at least NaN - skip
-    | string1 |
-    -----------  -> do nothing
-    |   NaN   |
-    -----------
-    | string1 |
-    -----------  -> add string2 to string1 and remove row with sring2
-    | string2 |
-    -----------
-    '''
-    drop_indexes = []
-    drop_indexes1 = [0]
-    for i in df[column_name].index:
-        if i > 1:
-            if (isinstance(df[column_name].loc[i-1], str) &
-                isinstance(df[column_name].loc[i-2], str)):
-                new_value = df[column_name].loc[i-2] + df[column_name].loc[i-1]
-                df.loc[i-2, column_name] = new_value
-                drop_indexes.append(i-1)
-                drop_indexes1.append(i-2)
-    df = df.drop(drop_indexes, axis=0)
-
-    return df, drop_indexes1
-
-
-def transform_fill_values_by_previous(data, kind='row', row_index=None, column_name=None):
-    
-    df = data.copy()
-    j = np.NaN
-    if kind == 'row':
-        # go through row by column
-        for i in df.columns:
-            # if value in row not NaN
-            if not pd.isna(df.loc[row_index, i]):
-                # remember this value in var j
-                j = df.loc[row_index, i]
-            else:
-                # if value in row equals '-', replace it by remembered value in j
-                df.loc[row_index, i] = j
-    elif kind == 'column':
-        # go through column by index
-        for i in df.index:
-            # if value in column not NaN
-            if not pd.isna(df.loc[i, column_name]):
-                # remember this value in var j
-                j = df.loc[i, column_name]
-            else:
-                # if value in column equals '-', replace it by remembered value in j
-                df.loc[i, column_name] = j
-    else:
-        print("Argument 'kind' must be 'row' or 'column'")
-        
-    return df
-
-
-def transform_resources(
-        data, year, FD_partial_names_list, federal_districts_names_list,
-        drop_rows_end=None):
-    
-    df_raw = data.copy()
-    # create slice to remove rows at the end of df
-    if drop_rows_end is None:
-        slice_ = slice(7, None)
-    else:
-        slice_ = slice(7, -drop_rows_end)
-    # remove rows at the end of the df
-    df = df_raw.iloc[:, :4][slice_].copy()
-    df['Unnamed: 0'] = [i.strip() for i in df['Unnamed: 0']]
-    df['Unnamed: 0'] = [i.strip() for i in df['Unnamed: 0']]
-    # replace symbols
-    replace_dict_part = {
-        '/n': '',
-        '\n': ' ',
-        'Kемеровская область': 'Кемеровская область',
-        'г. Москва': 'Москва',
-        'г. Санкт-Петербург': 'Санкт-Петербург',
-        'г. Севастополь': 'Севастополь'
-    }
-    df = df.replace(replace_dict_part, regex=True)
-    replace_dict_full = {
-        ' -': np.NaN,
-        '-': np.NaN,
-        '…': np.NaN
-    }
-    df = df.replace(replace_dict_full)
-    # reset index
-    df = df.reset_index(drop=True)
-    # concatenate federal districts that names are separated in two rows
-    df = federal_district_concat(df, 'Unnamed: 0', FD_partial_names_list)
-    df = df[~df['Unnamed: 0'].isin(federal_districts_names_list)]
-    
-    df = df.rename(columns={
-        'Unnamed: 0': year,
-        'Unnamed: 1': 'Всего',
-        'Unnamed: 2': 'Городская местность',
-        'Unnamed: 3': 'Сельская местность'
-    })
-    # some clean
-    df = df.set_index(year, drop=True)
-    df.index.name = None
-    # drop unuseful regions
-    drop_list = [
-    'в том числе:                     Ханты-Мансийский  автономный округ - Югра',
-    'в том числе:                   Ненецкий автономный округ',
-    'Ямало-Ненецкий  автономный округ',
-    'Тюменская область',
-    'Архангельская область',
-    ]
-    df = df.drop(drop_list, axis=0)
-    # transform columns to values in two columns: 'variables' and 'values'
-    # rename 'variables' to 'index' becausse it will be index level1
-    # rename 'values' to year
-    df = df.melt(
-        var_name='index',
-        value_name=year,
-        ignore_index=False)
-    # create multiindex
-    df = df.set_index([df.index, 'index'], drop=True)
-    # remove multiindex names
-    df.index.names = (None, None)
-    # change order if index level0 as in 'regions_names_list'
-    # df = df.reindex(regions_names_list, level=0, axis=0)
-
-    return df
-
-
-def federal_district_concat(data, column_name, federal_district_list):
-    '''
-    Concat two rows with federal district names
-
-    Raw:
-    | column_name       |
-    -----------------------------
-    | Южный             | NaN   |
-    -----------------------------  -> concat this rows and drop one with NaN
-    | федеральный округ | 12345 |
-    -----------------------------
-
-    Result:
-    ---------------------------------
-    | Южный федеральный округ | 12345
-    ---------------------------------
-
-    Arguments:
-    df,
-    column_name - column with regions names
-    federal_district_list - list with first name of FD ('Южный', 'Центральный', 'Северо-Западный')
-    
-    '''
-    df = data.copy()
-    
-    for index in df.index:
-        if df.loc[index, column_name] in federal_district_list:
-            new_value = (df.loc[index, column_name]
-                         + ' '
-                         + df.loc[index+1, column_name])
-            df.loc[index+1, column_name] = new_value
-            df = df.drop(index, axis=0)
-            
-    return df
-
-
-def get_data_two_level(data, level0=None, level1=None, indexes=None, kind='column'):
-    
-    df = data.copy()
-    # check 'kind' argument
-    if kind == 'index':
-        df = df.T
-    elif kind == 'column':
-        pass
-    else:
-        print("'kind' argument must be 'column' or 'index'")
-    # turn 'level' arguments to slice
-    if (level0 is None) & (level1 is None):
-        return df
-    if level0 is None:
-        level0 = slice(level0)
-    if level1 is None:
-        level1 = slice(level1)
-    # adress to levels
-    df = df.loc[:, (level0, level1)]
-    # drop multiindex level0 if both 'levels' are single
-    if isinstance(level0, str) & isinstance(level1, str):
-        if isinstance(df, pd.Series):
-            df = df.to_frame()
-            df.columns = df.columns.droplevel(1)
-            df.columns.name = data.columns.names[0]
-        else:
-            df.columns = df.columns.droplevel(0)
-    else:
-        if isinstance(level0, str):
-            df.columns = df.columns.droplevel(0)
-        if isinstance(level1, str):
-            df.columns = df.columns.droplevel(1)
-    # return 
-    if kind == 'index':
-        return df.T
-    if kind == 'column':
-        return df
+    return fig
 
 
 
