@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2024-05-24T08:42:06.551653</dc:date>
+    <dc:date>2024-06-26T11:20:52.836709</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -43,19 +43,19 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="mee7297448c" d="M 0 0 
+       <path id="m62f21f1ed9" d="M 0 0 
 L 0 3 
 " style="stroke: #cecece; stroke-width: 0.75"/>
       </defs>
       <g>
-       <use xlink:href="#mee7297448c" x="45.638971" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="45.638971" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_1">
       <!-- 01 -->
       <g style="fill: #808080" transform="translate(41.126471 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-30" d="M 320 2221 
+        <path id="Ubuntu-Regular-30" d="M 320 2221 
 Q 320 3334 713 3936 
 Q 1107 4538 1805 4538 
 Q 2502 4538 2896 3936 
@@ -84,7 +84,7 @@ Q 2579 1203 2620 1529
 Q 2662 1856 2662 2221 
 z
 " transform="scale(0.015625)"/>
-        <path id="Ubuntu-31" d="M 595 3520 
+        <path id="Ubuntu-Regular-31" d="M 595 3520 
 Q 960 3661 1305 3881 
 Q 1651 4102 1939 4435 
 L 2362 4435 
@@ -99,22 +99,22 @@ L 595 3520
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-30"/>
-       <use xlink:href="#Ubuntu-31" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30"/>
+       <use xlink:href="#Ubuntu-Regular-31" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#mee7297448c" x="102.122212" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="102.122212" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_2">
       <!-- 05 -->
       <g style="fill: #808080" transform="translate(97.609712 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-35" d="M 1274 2726 
+        <path id="Ubuntu-Regular-35" d="M 1274 2726 
 Q 2240 2688 2691 2304 
 Q 3142 1920 3142 1261 
 Q 3142 966 3043 716 
@@ -150,22 +150,22 @@ Q 1286 2822 1274 2726
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-30"/>
-       <use xlink:href="#Ubuntu-35" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30"/>
+       <use xlink:href="#Ubuntu-Regular-35" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#mee7297448c" x="158.605453" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="158.605453" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_3">
       <!-- 09 -->
       <g style="fill: #808080" transform="translate(154.092953 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-39" d="M 3206 2662 
+        <path id="Ubuntu-Regular-39" d="M 3206 2662 
 Q 3206 1344 2550 669 
 Q 1894 -6 602 -13 
 L 582 486 
@@ -206,22 +206,22 @@ Q 1357 2221 1773 2221
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-30"/>
-       <use xlink:href="#Ubuntu-39" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30"/>
+       <use xlink:href="#Ubuntu-Regular-39" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#mee7297448c" x="215.088694" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="215.088694" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_4">
       <!-- 13 -->
       <g style="fill: #808080" transform="translate(210.576194 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-33" d="M 1446 435 
+        <path id="Ubuntu-Regular-33" d="M 1446 435 
 Q 2016 435 2262 659 
 Q 2509 883 2509 1261 
 Q 2509 1504 2406 1670 
@@ -270,22 +270,22 @@ Q 1082 435 1446 435
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-31"/>
-       <use xlink:href="#Ubuntu-33" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-31"/>
+       <use xlink:href="#Ubuntu-Regular-33" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#mee7297448c" x="271.571936" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="271.571936" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_5">
       <!-- 17 -->
       <g style="fill: #808080" transform="translate(267.059436 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-37" d="M 1043 0 
+        <path id="Ubuntu-Regular-37" d="M 1043 0 
 Q 1082 512 1226 1078 
 Q 1370 1645 1581 2179 
 Q 1792 2714 2045 3171 
@@ -302,22 +302,22 @@ L 1043 0
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-31"/>
-       <use xlink:href="#Ubuntu-37" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-31"/>
+       <use xlink:href="#Ubuntu-Regular-37" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#mee7297448c" x="328.055177" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="328.055177" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_6">
       <!-- 21 -->
       <g style="fill: #808080" transform="translate(323.542677 146.474219) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-32" d="M 2989 3302 
+        <path id="Ubuntu-Regular-32" d="M 2989 3302 
 Q 2989 3072 2896 2857 
 Q 2803 2643 2649 2435 
 Q 2496 2227 2304 2025 
@@ -357,50 +357,50 @@ Q 2989 3891 2989 3302
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-32"/>
-       <use xlink:href="#Ubuntu-31" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-32"/>
+       <use xlink:href="#Ubuntu-Regular-31" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#mee7297448c" x="384.538418" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="384.538418" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_7">
       <!-- 25 -->
       <g style="fill: #808080" transform="translate(380.025918 146.474219) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-32"/>
-       <use xlink:href="#Ubuntu-35" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-32"/>
+       <use xlink:href="#Ubuntu-Regular-35" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_8">
      <g id="line2d_8">
       <g>
-       <use xlink:href="#mee7297448c" x="441.02166" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="441.02166" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_8">
       <!-- 29 -->
       <g style="fill: #808080" transform="translate(436.50916 146.474219) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-32"/>
-       <use xlink:href="#Ubuntu-39" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-32"/>
+       <use xlink:href="#Ubuntu-Regular-39" x="56.399994"/>
       </g>
      </g>
     </g>
     <g id="xtick_9">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#mee7297448c" x="483.384091" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m62f21f1ed9" x="483.384091" y="131.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_9">
       <!-- 31 -->
       <g style="fill: #808080" transform="translate(478.871591 146.474219) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-33"/>
-       <use xlink:href="#Ubuntu-31" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-33"/>
+       <use xlink:href="#Ubuntu-Regular-31" x="56.399994"/>
       </g>
      </g>
     </g>
@@ -409,70 +409,70 @@ z
     <g id="ytick_1">
      <g id="line2d_10">
       <defs>
-       <path id="m29009aaf1d" d="M 0 0 
+       <path id="m3cf21d168f" d="M 0 0 
 L -3 0 
 " style="stroke: #cecece; stroke-width: 0.75"/>
       </defs>
       <g>
-       <use xlink:href="#m29009aaf1d" x="38.7625" y="126.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m3cf21d168f" x="38.7625" y="126.266719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_10">
       <!-- 10000 -->
       <g style="fill: #808080" transform="translate(7.2 129.370469) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-31"/>
-       <use xlink:href="#Ubuntu-30" x="56.399994"/>
-       <use xlink:href="#Ubuntu-30" x="112.799988"/>
-       <use xlink:href="#Ubuntu-30" x="169.199982"/>
-       <use xlink:href="#Ubuntu-30" x="225.599976"/>
+       <use xlink:href="#Ubuntu-Regular-31"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="112.799988"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="169.199982"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="225.599976"/>
       </g>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m29009aaf1d" x="38.7625" y="102.011719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m3cf21d168f" x="38.7625" y="102.011719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_11">
       <!-- 20000 -->
       <g style="fill: #808080" transform="translate(7.2 105.115469) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-32"/>
-       <use xlink:href="#Ubuntu-30" x="56.399994"/>
-       <use xlink:href="#Ubuntu-30" x="112.799988"/>
-       <use xlink:href="#Ubuntu-30" x="169.199982"/>
-       <use xlink:href="#Ubuntu-30" x="225.599976"/>
+       <use xlink:href="#Ubuntu-Regular-32"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="112.799988"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="169.199982"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="225.599976"/>
       </g>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m29009aaf1d" x="38.7625" y="77.756719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m3cf21d168f" x="38.7625" y="77.756719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_12">
       <!-- 30000 -->
       <g style="fill: #808080" transform="translate(7.2 80.860469) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-33"/>
-       <use xlink:href="#Ubuntu-30" x="56.399994"/>
-       <use xlink:href="#Ubuntu-30" x="112.799988"/>
-       <use xlink:href="#Ubuntu-30" x="169.199982"/>
-       <use xlink:href="#Ubuntu-30" x="225.599976"/>
+       <use xlink:href="#Ubuntu-Regular-33"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="112.799988"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="169.199982"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="225.599976"/>
       </g>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m29009aaf1d" x="38.7625" y="53.501719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m3cf21d168f" x="38.7625" y="53.501719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_13">
       <!-- 40000 -->
       <g style="fill: #808080" transform="translate(7.2 56.605469) scale(0.08 -0.08)">
        <defs>
-        <path id="Ubuntu-34" d="M 256 1536 
+        <path id="Ubuntu-Regular-34" d="M 256 1536 
 Q 378 1818 589 2192 
 Q 800 2566 1065 2963 
 Q 1331 3360 1635 3744 
@@ -498,28 +498,28 @@ L 2240 3731
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#Ubuntu-34"/>
-       <use xlink:href="#Ubuntu-30" x="56.399994"/>
-       <use xlink:href="#Ubuntu-30" x="112.799988"/>
-       <use xlink:href="#Ubuntu-30" x="169.199982"/>
-       <use xlink:href="#Ubuntu-30" x="225.599976"/>
+       <use xlink:href="#Ubuntu-Regular-34"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="112.799988"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="169.199982"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="225.599976"/>
       </g>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m29009aaf1d" x="38.7625" y="29.246719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
+       <use xlink:href="#m3cf21d168f" x="38.7625" y="29.246719" style="fill: #cecece; stroke: #cecece; stroke-width: 0.75"/>
       </g>
      </g>
      <g id="text_14">
       <!-- 50000 -->
       <g style="fill: #808080" transform="translate(7.2 32.350469) scale(0.08 -0.08)">
-       <use xlink:href="#Ubuntu-35"/>
-       <use xlink:href="#Ubuntu-30" x="56.399994"/>
-       <use xlink:href="#Ubuntu-30" x="112.799988"/>
-       <use xlink:href="#Ubuntu-30" x="169.199982"/>
-       <use xlink:href="#Ubuntu-30" x="225.599976"/>
+       <use xlink:href="#Ubuntu-Regular-35"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="56.399994"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="112.799988"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="169.199982"/>
+       <use xlink:href="#Ubuntu-Regular-30" x="225.599976"/>
       </g>
      </g>
     </g>
@@ -2419,7 +2419,7 @@ L 481.913173 49.723306
 L 482.599601 63.188856 
 L 483.286029 79.359407 
 L 483.286029 79.359407 
-" clip-path="url(#pa810414f9f)" style="fill: none; stroke: #5b5b5b; stroke-width: 1.2; stroke-linecap: square"/>
+" clip-path="url(#pabfd314062)" style="fill: none; stroke: #5b5b5b; stroke-width: 1.2; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
     <path d="M 38.7625 126.266719 
@@ -2753,26 +2753,26 @@ z
      <use xlink:href="#Ubuntu-Bold-74" x="209.299973"/>
      <use xlink:href="#Ubuntu-Bold-68" x="253.699966"/>
      <use xlink:href="#Ubuntu-Bold-6c" x="312.59996"/>
-     <use xlink:href="#Ubuntu-Bold-79" x="343.074951"/>
-     <use xlink:href="#Ubuntu-Bold-20" x="397.774948"/>
-     <use xlink:href="#Ubuntu-Bold-64" x="421.774933"/>
-     <use xlink:href="#Ubuntu-Bold-61" x="482.174927"/>
-     <use xlink:href="#Ubuntu-Bold-74" x="537.474915"/>
-     <use xlink:href="#Ubuntu-Bold-61" x="579.874908"/>
-     <use xlink:href="#Ubuntu-Bold-20" x="635.174896"/>
-     <use xlink:href="#Ubuntu-Bold-28" x="659.174881"/>
-     <use xlink:href="#Ubuntu-Bold-4d" x="694.774872"/>
-     <use xlink:href="#Ubuntu-Bold-61" x="784.474854"/>
-     <use xlink:href="#Ubuntu-Bold-72" x="839.774841"/>
-     <use xlink:href="#Ubuntu-Bold-63" x="880.974838"/>
-     <use xlink:href="#Ubuntu-Bold-68" x="930.974823"/>
-     <use xlink:href="#Ubuntu-Bold-29" x="987.749817"/>
+     <use xlink:href="#Ubuntu-Bold-79" x="344.199951"/>
+     <use xlink:href="#Ubuntu-Bold-20" x="398.899948"/>
+     <use xlink:href="#Ubuntu-Bold-64" x="422.899933"/>
+     <use xlink:href="#Ubuntu-Bold-61" x="483.299927"/>
+     <use xlink:href="#Ubuntu-Bold-74" x="538.599915"/>
+     <use xlink:href="#Ubuntu-Bold-61" x="582.999908"/>
+     <use xlink:href="#Ubuntu-Bold-20" x="638.299896"/>
+     <use xlink:href="#Ubuntu-Bold-28" x="662.299881"/>
+     <use xlink:href="#Ubuntu-Bold-4d" x="697.899872"/>
+     <use xlink:href="#Ubuntu-Bold-61" x="787.599854"/>
+     <use xlink:href="#Ubuntu-Bold-72" x="842.899841"/>
+     <use xlink:href="#Ubuntu-Bold-63" x="885.099838"/>
+     <use xlink:href="#Ubuntu-Bold-68" x="935.099823"/>
+     <use xlink:href="#Ubuntu-Bold-29" x="993.999817"/>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa810414f9f">
+  <clipPath id="pabfd314062">
    <rect x="41.2625" y="29.246719" width="446.4" height="97.02"/>
   </clipPath>
  </defs>
