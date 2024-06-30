@@ -261,13 +261,13 @@ def alpha_palette(palette, alpha=0.75):
     return palette_alphed
 
 
-def loadit(name, dir='files', create_empty_dict=False):
+def loadit(name, path='files', create_empty_dict=False):
     '''
     'create_empty_dict' == True --> function will create empty dictionary,
                                     if there is no such file in directory
     '''
     try:
-        result = pd.read_pickle(f'{dir}{name}.pkl')
+        result = pd.read_pickle(f'{path}/{name}.pkl')
         return result
     except FileNotFoundError:
         print(f"File '{name}' not found")
@@ -2433,6 +2433,23 @@ def plot_forecast(
                 labels=['Actual', 'Forecast', label0, label1],
                 colors=[palette[0], palette[1], palette[2], palette[2]],
                 alphas=[alpha_actual, alpha_forecast, alphas[0], alphas[1]]))
+
+
+def get_minute_of_day(x):
+
+    hour = x.hour
+    minute = x.minute
+    
+    return hour*60 + minute
+
+
+def get_hours_and_minutes_from_minutes(x):
+
+    hours = math.floor(x/60)
+    minutes = x - hours*60
+    result = str(hours) + ':' + str(minutes).zfill(2) + ':00'
+
+    return result
 
 
 
