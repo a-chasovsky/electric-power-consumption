@@ -1,5 +1,3 @@
-# Electric Power Consumption
+## Стратегии бустинга авторегрессионной модели
 
-https://www.kaggle.com/datasets/fedesoriano/electric-power-consumption/data
-
-<img src='docs/img/header.png'>
+Ссылка на описание проекта в Github Pages: https://achasovsky.github.io/autoregression-boosting/
