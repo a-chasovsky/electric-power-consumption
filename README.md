@@ -1,3 +1,4 @@
-## Стратегии бустинга авторегрессионной модели
+<!-- ## Стратегии бустинга авторегрессионной модели -->
 
-Ссылка на описание проекта в Github Pages: https://achasovsky.github.io/autoregression-boosting/
+### Ссылка на описание проекта в Github Pages
+https://achasovsky.github.io/autoregression-boosting/
